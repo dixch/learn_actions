@@ -1,0 +1,33 @@
+name: Challenge1
+
+on: [Push]
+
+jobs:
+  job1:
+    name: job1
+    use: Ubuntu-latest
+    steps:
+      name: date1
+      run: echo "$now"
+
+  job2:
+    name: job2
+    use: windows-latest
+    steps:
+      name: date2
+      run: Get-Date -DisplayHint Date
+
+  job3:
+    name: job3
+    use: macos-latest
+    steps:
+      name: date3
+      run: echo date +'%m/%d/%Y'
+
+  job4:
+    name: job4
+    use: macos-latest
+    needs: [job1, job2, job3]
+    steps:
+      name: date4
+      run: echo "$now"
