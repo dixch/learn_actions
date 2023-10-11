@@ -22,8 +22,7 @@ jobs:
     runs-on: macos-latest
     steps:
     - name: date3
-      run: now="$(date)"
-            printf "Current date and time %s\n" "$now"
+      run: date
 
   job4:
     name: job4
@@ -31,5 +30,4 @@ jobs:
     needs: [job1, job2, job3]
     steps:
     - name: date4
-      run: now="$(date)"
-            printf "Current date and time %s\n" "$now"
+      run: date
