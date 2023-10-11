@@ -1,6 +1,6 @@
 name: Challenge1
 
-on: [Push, workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   job1:
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: date1
-      run: echo "$now"
+      run: now="$(date)" printf "Current date and time %s\n" "$now"
 
   job2:
     name: job2
@@ -22,7 +22,8 @@ jobs:
     runs-on: macos-latest
     steps:
     - name: date3
-      run: echo date +'%m/%d/%Y'
+      run: now="$(date)"
+            printf "Current date and time %s\n" "$now"
 
   job4:
     name: job4
@@ -30,4 +31,5 @@ jobs:
     needs: [job1, job2, job3]
     steps:
     - name: date4
-      run: echo "$now"
+      run: now="$(date)"
+            printf "Current date and time %s\n" "$now"
