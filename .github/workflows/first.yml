@@ -1,0 +1,24 @@
+name: first
+
+on: [push, pull_request]
+
+jobs:
+  job1:
+    name: first job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Step one
+      uses: actions/checkout@v2
+    - name: Step two
+      run: env | sor
+  job2:
+    name: second job
+    runs-on: windows-latest
+    steps:
+    - name: Step one
+      uses: actions/checkout@v2
+    - name: Step two
+      run: "Get-ChildItem Env: | Sort-Object Name"
+
+#### Action notes: Can call action from public repo OR the same repo as the action is in OR a docker image registry e.g. dockerhub docker://hello-world:latest
+#### run: a single command on the default shell (bash or powershell)
