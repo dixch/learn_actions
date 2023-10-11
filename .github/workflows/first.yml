@@ -19,6 +19,9 @@ jobs:
       uses: actions/checkout@v2
     - name: Step two
       run: "Get-ChildItem Env: | Sort-Object Name"
+  job3:
+    needs: [job1, job2]
+    
 
 #### Action notes: Can call action from public repo OR the same repo as the action is in OR a docker image registry e.g. dockerhub docker://hello-world:latest
 #### run: a single command on the default shell (bash or powershell)
