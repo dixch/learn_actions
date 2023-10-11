@@ -5,7 +5,7 @@ on: [Push]
 jobs:
   job1:
     name: job1
-    runs-on: Ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: date1
       run: echo "$now"
