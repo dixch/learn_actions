@@ -1,6 +1,6 @@
 name: Challenge1
 
-on: [Push]
+on: [Push, workflow_dispatch]
 
 jobs:
   job1:
