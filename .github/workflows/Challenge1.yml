@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: date1
-      run: now="$(date)" printf "Current date and time %s\n" "$now"
+      run: date
 
   job2:
     name: job2
